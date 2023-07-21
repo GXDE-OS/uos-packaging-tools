@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=/usr/bin/pack %U
+Name=Pack Here
+Icon=uos-packaging-tools
+Type=Application
+X-DFM-MenuTypes=SingleDir;SingleFile;MultiFileDirs;
+Terminal=true

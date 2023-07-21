@@ -1,0 +1,44 @@
+#!/bin/bash
+
+function notify-send()
+{
+    #Detect the user using such display
+    local user=$(who | awk '{print $1}' | head -n 1)
+
+    #Detect the id of the user
+    local uid=$(id -u $user)
+
+    sudo -u $user  DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus notify-send "$@"
+}
+
+if [ -e /usr/local/bin/ssaudit ];then
+
+for DEBPATH in "$@"
+do
+    DEBPATH=$(realpath "$DEBPATH")
+    notify-send "正在使用ssaudit安装 $(dpkg-deb -f "$DEBPATH" Package)，请稍候...." -i /usr/share/icons/uos-packaging-tools.png
+    /usr/local/bin/ssaudit "$DEBPATH" 
+	if [ "$?" = "0" ];then
+    notify-send "$(dpkg-deb -f "$DEBPATH" Package) 安装已完成" -i /usr/share/icons/uos-packaging-tools.png
+	else
+	notify-send "$(dpkg-deb -f "$DEBPATH" Package) 安装出错！请手动安装！" -i /usr/share/icons/uos-packaging-tools.png
+	fi
+
+    echo "---------------------------------------------------------------------------"
+done
+else
+
+for DEBPATH in "$@"
+do
+    DEBPATH=$(realpath "$DEBPATH")
+    notify-send "正在使用apt安装 $(dpkg-deb -f "$DEBPATH" Package)，请稍候...." -i /usr/share/icons/uos-packaging-tools.png
+    apt install "$DEBPATH" --reinstall -y
+	if [ "$?" = "0" ];then
+    notify-send "$(dpkg-deb -f "$DEBPATH" Package) 安装已完成" -i /usr/share/icons/uos-packaging-tools.png
+	else
+	notify-send "$(dpkg-deb -f "$DEBPATH" Package) 安装出错！请手动安装！" -i /usr/share/icons/uos-packaging-tools.png
+	fi
+
+    echo "---------------------------------------------------------------------------"
+done
+fi

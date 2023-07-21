@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=Development;
+Encoding=UTF-8
+Exec=pkexec /opt/uos-packaging-tools/just-install-me %U
+Icon=uos-packaging-tools
+MimeType=application/vnd.debian.binary-package;application/x-deb;
+Name=直接安装
+StartupWMClass=直接安装
+Terminal=false
+Type=Application

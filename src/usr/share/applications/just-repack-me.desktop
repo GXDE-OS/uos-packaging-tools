@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=Development;
+Encoding=UTF-8
+Exec=/opt/uos-packaging-tools/just-repack-me %U
+Icon=uos-packaging-tools
+MimeType=application/vnd.debian.binary-package;application/x-deb;
+Name=重新打包
+StartupWMClass=重新打包
+Terminal=false
+Type=Application

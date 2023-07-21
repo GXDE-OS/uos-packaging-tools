@@ -1,0 +1,35 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+    echo "参数错误，请提供至少一个deb文件的目录路径"
+    exit 1
+fi
+
+for deb_file in "$@"
+do
+    cd "$(dirname "$deb_file")"
+
+    # 获取deb包的包名和架构
+    package_name=$(dpkg-deb -f "$deb_file" Package)
+    architecture=$(dpkg-deb -f "$deb_file" Architecture)
+
+    # 创建文件夹
+    folder_name="$package_name"
+    mkdir "$folder_name"
+    cd "$folder_name"
+
+    # 创建子文件夹和空文件
+    mkdir "icons" "screenshot"
+    touch "info.txt" "author.txt" 
+
+    # 创建与架构名相同的文件夹并移动deb包
+    mkdir "$architecture"
+    mv "$deb_file" "$architecture/"
+
+    cp -r /opt/apps/"$package_name"/entries/icons/* icons/
+
+    echo "操作完成！"
+
+    echo "---------------------------------------------------------------------------"
+done
+
