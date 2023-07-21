@@ -1,0 +1,9 @@
+[Desktop Entry]
+Exec=/usr/bin/pack %p
+Name=Pack Here
+Icon=uos-packaging-tools
+Type=Application
+X-DFM-MenuTypes=EmptyArea;
+Terminal=true
+MimeType=inode/directory;
+NoDisplay=true

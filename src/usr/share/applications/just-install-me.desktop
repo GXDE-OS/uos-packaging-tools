@@ -8,3 +8,4 @@ Name=直接安装
 StartupWMClass=直接安装
 Terminal=false
 Type=Application
+NoDisplay=true

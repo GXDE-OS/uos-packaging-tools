@@ -8,3 +8,4 @@ Name=生成目录
 StartupWMClass=生成目录
 Terminal=false
 Type=Application
+NoDisplay=true

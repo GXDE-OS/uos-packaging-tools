@@ -1,0 +1,9 @@
+[Desktop Entry]
+Exec=/usr/bin/pack %F
+Name=Pack This Dir
+Icon=uos-packaging-tools
+Type=Application
+X-DFM-MenuTypes=SingleFile;SingleDir;MultiFileDirs;
+Terminal=true
+MimeType=inode/directory;
+NoDisplay=true

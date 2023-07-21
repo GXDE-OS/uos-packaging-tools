@@ -5,6 +5,7 @@ Exec=/opt/uos-packaging-tools/just-X-me %U
 Icon=uos-packaging-tools
 MimeType=application/vnd.debian.binary-package;application/x-deb;
 Name=直接解包
+NoDisplay=true
 StartupWMClass=直接解包
 Terminal=false
 Type=Application
