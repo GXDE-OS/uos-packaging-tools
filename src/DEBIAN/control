@@ -3,7 +3,7 @@ Version: 1.0.2
 Architecture: all
 Maintainer: shenmo<shenmo@spark-app.store>
 Installed-Size: 10
-Depends: libnotify-bin,fakeroot,zstd,store.spark-app.appimage2deb | appimage2deb ,policykit-1
+Depends: libnotify-bin,fakeroot,zstd,cn.flamescion.appimage2deb | appimage2deb ,policykit-1
 Section: graphics
 Priority: optional
 Description: uos-packaging-tools
