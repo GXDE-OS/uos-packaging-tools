@@ -5,10 +5,9 @@ OUTPATH=""
 
 for DEBPATH in "$@"
 do
-if [[ $DEBPATH == file://* ]]; then
-    # 如果是，移除 'file://' 部分并输出结果
+
     DEBPATH="${DEBPATH#file://}"
-fi
+
     rm -rf $TMPDIR/unpack-dir
     mkdir -p "$TMPDIR/unpack-dir"
     cd "$TMPDIR/unpack-dir"

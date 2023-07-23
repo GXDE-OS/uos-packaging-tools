@@ -14,10 +14,9 @@ unpack_package() {
 }
 
 for arg in "$@"; do
-if [[ $arg == file://* ]]; then
-    # 如果是，移除 'file://' 部分并输出结果
+
     arg="${arg#file://}"
-fi
+
     unpack_package "$arg"
 done
 

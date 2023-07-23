@@ -8,10 +8,8 @@ fi
 for deb_file in "$@"
 do
 
-if [[ $deb_file == file://* ]]; then
-    # 如果是，移除 'file://' 部分并输出结果
     deb_file="${deb_file#file://}"
-fi
+
     cd "$(dirname "$deb_file")"
 
     # 获取deb包的包名和架构
