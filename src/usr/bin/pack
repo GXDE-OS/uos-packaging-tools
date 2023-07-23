@@ -1,6 +1,13 @@
 #!/bin/bash
 if [ "$1" != ""  ];then
-opt=$1
+if [[ $1 == file://* ]]; then
+    # 如果是，移除 'file://' 部分并输出结果
+    opt="${1#file://}"
+else
+    # 如果不是，直接输出原始路径
+    opt=$1
+fi
+
 else
 opt=`pwd`
 fi

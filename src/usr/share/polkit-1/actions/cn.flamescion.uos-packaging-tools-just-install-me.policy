@@ -2,9 +2,9 @@
 <!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
  "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
 <policyconfig>
-    <vendor>Spark Store</vendor>
+    <vendor>Flamescion</vendor>
     <icon_name>x-package-repository</icon_name>
-    <action id="store.spark-app.ssinstall">
+    <action id="cn.flamescion.uos-packaging-tools-just-install-me">
         <description>运行justinstallme需要权限</description>
         <message>要使用ssinstall需要权限</message>
         <defaults>
