@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=/usr/bin/pack %p
+Exec=/usr/bin/packdeb %p
 Name=Pack Here
 Icon=uos-packaging-tools
 Type=Application
