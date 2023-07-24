@@ -1,9 +1,9 @@
 Package: uos-packaging-tools
-Version: 1.0.5
+Version: 1.0.6
 Architecture: all
 Maintainer: shenmo<shenmo@spark-app.store>
 Installed-Size: 10
-Depends: libnotify-bin,fakeroot,zstd,cn.flamescion.appimage2deb | appimage2deb ,policykit-1
+Depends: libnotify-bin,fakeroot,zstd,cn.flamescion.appimage2deb | appimage2deb ,policykit-1,zenity
 Section: graphics
 Priority: optional
 Description: uos-packaging-tools
