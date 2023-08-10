@@ -12,6 +12,6 @@ else
 opt=`pwd`
 fi
 notify-send `basename $opt`开始打包 -i /usr/share/icons/uos-packaging-tools.png
-dpkg-deb -Z xz  -b $opt $opt/..
+fakeroot dpkg-deb -Z xz  -b $opt $opt/..
 notify-send `basename $opt`打包完成 -i /usr/share/icons/uos-packaging-tools.png
 exit
