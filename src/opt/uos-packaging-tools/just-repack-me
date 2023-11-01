@@ -1,6 +1,6 @@
 #/bin/bash
 
-TMPDIR=/tmp
+TMPDIR=$(mktemp -d)
 OUTPATH=$(dirname "$1")
 
 for DEBPATH in "$@"
