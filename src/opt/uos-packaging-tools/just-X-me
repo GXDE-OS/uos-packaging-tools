@@ -3,9 +3,9 @@ TMPDIR="/tmp"
 
 unpack_package() {
     DEBPATH="$1"
-    ABS_DEBPATH="$(readlink -f "$DEBPATH")"
+    ABS_DEBPATH="$(realpath "$DEBPATH")"
     OUTPATH=$(dirname "$DEBPATH")
-    ABS_OUTPATH="$(readlink -f "$OUTPATH")"
+    ABS_OUTPATH="$(realpath "$OUTPATH")"
     local fields=$(LC_ALL=C dpkg -f "$DEBPATH" 2>&1)
 
     if [[ "$(echo "$fields" | wc -l)" == 1 ]] && [[ "$fields" =~ "tar.zst" ]]; then
