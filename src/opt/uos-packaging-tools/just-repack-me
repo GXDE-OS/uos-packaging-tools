@@ -1,13 +1,14 @@
 #!/bin/bash
 
 TMPDIR=$(mktemp -d)
-OUTPATH=$(dirname "$1")
+
 
 for DEBPATH in "$@"
 do
 
     DEBPATH="${DEBPATH#file://}"
     DEBPATH=$(realpath $DEBPATH)
+    OUTPATH=$(dirname "$DEBPATH")
     rm -rf $TMPDIR/unpack-dir
     mkdir -p "$TMPDIR/unpack-dir"
     cd "$TMPDIR/unpack-dir"

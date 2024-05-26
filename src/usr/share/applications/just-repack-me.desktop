@@ -6,6 +6,6 @@ Icon=uos-packaging-tools
 MimeType=application/vnd.debian.binary-package;application/x-deb;
 Name=重打包
 StartupWMClass=重打包
-Terminal=true
+Terminal=false
 Type=Application
 NoDisplay=false

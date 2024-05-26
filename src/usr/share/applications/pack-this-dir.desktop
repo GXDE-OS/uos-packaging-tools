@@ -4,6 +4,6 @@ Name=Pack This Dir
 Icon=uos-packaging-tools
 Type=Application
 X-DFM-MenuTypes=SingleFile;SingleDir;MultiFileDirs;
-Terminal=true
+Terminal=false
 MimeType=inode/directory;
 NoDisplay=false
