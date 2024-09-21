@@ -1,7 +1,7 @@
 [Desktop Entry]
 Categories=Development;
 Encoding=UTF-8
-Exec=/opt/uos-packaging-tools/just-X-me %U
+Exec=/opt/uos-packaging-tools/just-X-me %F
 Icon=uos-packaging-tools
 MimeType=application/vnd.debian.binary-package;application/x-deb;
 Name=直接解包

@@ -1,7 +1,7 @@
 [Desktop Entry]
 Categories=Development;
 Encoding=UTF-8
-Exec=pkexec /opt/uos-packaging-tools/just-install-me %U
+Exec=pkexec /opt/uos-packaging-tools/just-install-me %F
 Icon=uos-packaging-tools
 MimeType=application/vnd.debian.binary-package;application/x-deb;
 Name=Install
