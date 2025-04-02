@@ -1,9 +1,9 @@
 Package: uos-packaging-tools
-Version: 1.3.2
+Version: 1.4.0
 Architecture: all
 Maintainer: shenmo<shenmo@spark-app.store>
 Installed-Size: 10
-Depends: libnotify-bin,fakeroot,zstd,policykit-1 | polkit,zenity
+Depends: libnotify-bin,fakeroot,zstd,policykit-1 | polkit,zenity,bash,ostree
 Section: graphics
 Priority: optional
 Description: uos-packaging-tools

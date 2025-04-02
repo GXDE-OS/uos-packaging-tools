@@ -1,0 +1,60 @@
+#!/bin/bash
+
+# Flatpak Extractor Script
+# Usage: ./flatpak-extractor.sh <flatpak-file>
+
+set -e
+
+# Check if filename is provided
+if [ $# -eq 0 ]; then
+    echo "Error: No Flatpak file specified"
+    echo "Usage: $0 <flatpak-file>"
+    exit 1
+fi
+
+FLATPAK_FILE="$(realpath $1)"
+
+# Check if file exists
+if [ ! -f "$FLATPAK_FILE" ]; then
+    echo "Error: File '$FLATPAK_FILE' not found"
+    exit 1
+fi
+
+# Create output directory name from flatpak filename (remove .flatpak extension)
+OUTPUT_DIR="${FLATPAK_FILE%.flatpak}"
+if [ "$OUTPUT_DIR" = "$FLATPAK_FILE" ]; then
+    # File doesn't have .flatpak extension, append _extracted
+    OUTPUT_DIR="${FLATPAK_FILE}_extracted"
+fi
+
+
+
+# Create temporary directory for ostree repo
+mkdir -p "${FLATPAK_FILE}_tmp"
+REPO_DIR="${FLATPAK_FILE}_tmp"
+trap 'rm -rf "$REPO_DIR"' EXIT
+
+echo "Extracting $FLATPAK_FILE to $OUTPUT_DIR..."
+
+# Initialize ostree repo
+pushd "$REPO_DIR"
+echo "Initializing ostree repository..."
+ostree init --repo="repo" --mode=bare-user
+
+# Apply static delta
+echo "Applying static delta..."
+ostree static-delta apply-offline --repo="repo" "$FLATPAK_FILE"
+
+
+
+# Checkout the files
+echo "Checking out files..."
+mkdir -p "$OUTPUT_DIR"
+
+ostree checkout --repo="repo" -U $(basename $(echo repo/objects/*/*.commit | cut -d/ -f3- --output-delimiter= ) .commit) "outdir"
+mv -v outdir/* $OUTPUT_DIR
+
+popd
+notify-send $(basename $1)拆包完成 -i /usr/share/icons/uos-packaging-tools.png
+
+echo "Extraction complete! Files are in: $OUTPUT_DIR"

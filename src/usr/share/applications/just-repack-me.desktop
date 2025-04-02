@@ -8,4 +8,4 @@ Name=重打包
 StartupWMClass=重打包
 Terminal=false
 Type=Application
-NoDisplay=false
+NoDisplay=true
