@@ -9,4 +9,4 @@ Name[zh_CN]=安装
 StartupWMClass=Install
 Terminal=false
 Type=Application
-NoDisplay=true
+NoDisplay=false

@@ -1,0 +1,6 @@
+uos-packaging-tools (1.5.0) UNRELEASED; urgency=low
+
+  * Initial release. Closes: #nnnn
+    <nnnn is the bug number of your ITP>
+
+ -- shenmo <>  Wed, 09 Apr 2025 18:42:51 +0800
