@@ -1,6 +1,7 @@
 [Desktop Entry]
 Exec=/usr/bin/packdeb %p
 Name=Pack Here
+Name[zh_CN]=在此打包
 Icon=uos-packaging-tools
 Type=Application
 X-DFM-MenuTypes=EmptyArea;
