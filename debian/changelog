@@ -1,6 +1,5 @@
-uos-packaging-tools (1.6.1) UNRELEASED; urgency=low
+uos-packaging-tools (1.7.0) UNRELEASED; urgency=low
 
-  * Initial release. Closes: #nnnn
-    <nnnn is the bug number of your ITP>
+  * 支持在 Debian 13 安装
 
  -- shenmo <>  Wed, 09 Apr 2025 18:42:51 +0800
