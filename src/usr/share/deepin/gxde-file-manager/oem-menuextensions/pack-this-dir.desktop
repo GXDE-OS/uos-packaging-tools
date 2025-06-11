@@ -1,0 +1,11 @@
+[Desktop Entry]
+Exec=/usr/bin/packdeb %F
+Name=Pack This Dir
+Name[zh_CN]=在此打包
+Icon=uos-packaging-tools
+Type=Application
+X-DFM-MenuTypes=SingleDir;MultiFileDirs;
+Terminal=true
+MimeType=inode/directory;
+NoDisplay=true
+X-DDE-FileManager-PosNum=1
