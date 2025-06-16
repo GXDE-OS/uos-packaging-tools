@@ -1,10 +1,10 @@
-uos-packaging-tools (1.7.4) UNRELEASED; urgency=low
+uos-packaging-tools (1.7.5) UNRELEASED; urgency=low
 
   * 支持在 Debian 13 安装
   * 根据新 zenity 的样式修改了大小 
   * 支持自动设置755权限
   * 支持 GXDE 25 GXFM
   * 新增自动添加安装大小的功能
-
+  * 修复银河麒麟不支持显示图标的问题
 
  -- shenmo <>  Wed, 09 Apr 2025 18:42:51 +0800
