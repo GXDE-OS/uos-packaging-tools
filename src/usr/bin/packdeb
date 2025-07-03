@@ -18,21 +18,10 @@ echo "正在检查权限: $opt"
 non_755_files=$(find "$opt" -type f -not -perm 755 -o -type d -not -perm 755 2>/dev/null | wc -l)
 if [ $non_755_files -gt 0 ]; then
     echo "发现$non_755_files个文件/目录权限不是755，正在修改..."
-    if sudo chmod 755 -R "$opt" 2>/tmp/chmod_error.log; then
+    if chmod 755 -R "$opt" 2>/tmp/chmod_error.log; then
         echo "权限修改成功"
     else
-        error_msg=$(head -n 1 /tmp/chmod_error.log 2>/dev/null || echo "未知错误")
-        notify-send "权限修改失败: $error_msg" -i /usr/share/icons/uos-packaging-tools.png
-        # 尝试使用pkexec作为备用方案
-        if command -v pkexec >/dev/null 2>&1; then
-            if pkexec chmod 755 -R "$opt"; then
-                echo "使用pkexec修改权限成功"
-            else
-                exit 1
-            fi
-        else
-            exit 1
-        fi
+        echo "权限修改失败"
     fi
 else
     echo "所有文件权限已经是755，无需修改"

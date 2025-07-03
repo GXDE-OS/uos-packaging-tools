@@ -1,4 +1,4 @@
-uos-packaging-tools (1.7.5) UNRELEASED; urgency=low
+uos-packaging-tools (1.7.6) UNRELEASED; urgency=low
 
   * 支持在 Debian 13 安装
   * 根据新 zenity 的样式修改了大小 
